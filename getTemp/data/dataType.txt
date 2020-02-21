@@ -1,0 +1,16 @@
+lon
+lat
+main
+description
+base
+temp
+feels_like
+temp_min
+temp_max
+pressure
+humidity
+visibility
+country
+sunrise
+sunset
+timezone
