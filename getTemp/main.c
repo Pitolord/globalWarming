@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 int nbCharInFile(const char *fichier);
+int nbLineInFile(const char *fichier);
 char *getInfo(char *data, char *dataType);
 
 int main(){
@@ -17,9 +18,14 @@ int main(){
 	char **dataType;
 	int nbDataType = 0;
 	int j = 0;
+	char *date;
+	char *heure;
+	int jour;
+	int mois;
+	int annee;
 	
 	//---- Importation du fichier texte listesVilles.txt ----//
-	nbVilles = nbCharInFile("data/listeVilles.txt");
+	nbVilles = nbLineInFile("data/listeVilles.txt");
 	villes = malloc(nbVilles * sizeof (*villes));
 	for( i = 0; i< nbVilles; i++ ){
   		villes[i] = malloc( 50 * sizeof(*villes[i]) );
@@ -30,7 +36,7 @@ int main(){
 	fclose(fp);
 
 	//---- Importation dataType ----//
-	nbDataType = nbCharInFile("data/dataType.txt");
+	nbDataType = nbLineInFile("data/dataType.txt");
 	dataType = malloc(nbDataType * sizeof (*dataType));
 	for( i = 0; i< nbDataType; i++ ){
   		dataType[i] = malloc( 15 * sizeof(*dataType[i]));
@@ -44,14 +50,14 @@ int main(){
 	for(j=0;j<nbVilles;j++)
 	{
 		command = malloc(150 * sizeof(char));
-		strcpy(command, "curl \"https://api.openweathermap.org/data/2.5/weather?q=");		
+		strcpy(command, "curl --silent \"https://api.openweathermap.org/data/2.5/weather?q=");		
 		strcat(command, villes[j]);
 		strcat(command, "&units=metric&APPID=b7c635aa6d4f700b3ffd7a54f01b4958\" -o data/file.txt");
 		system(command);
 		free(command); //liberation de command
 
 		//---- Importation des données de la ville ----//
-		length = 600; // A REMPLACER PAR nbCharInFile
+		length = nbCharInFile("data/file.txt");
 		data = malloc(length * sizeof(char));
 		fp = fopen("data/file.txt", "r");
 		i = 0;
@@ -74,17 +80,23 @@ int main(){
 		free(data);
 	}
 
-	//---- Liberation de la mémoire listes villes ----//
+	//---- Liberation de la mémoire ----//
 	for( i = 0; i < nbVilles; i++ ){
   		free( villes[i] );
   		villes[i] = NULL;
  	}
  	free(villes);
+	for( i = 0; i < nbDataType; i++ ){
+  		free( dataType[i] );
+  		dataType[i] = NULL;
+ 	}
+ 	free(dataType);
 	return 0;
 }
 
+
 //---- FUNCTION ----//
-int nbCharInFile(const char *fichier)
+int nbLineInFile(const char *fichier)
 {
 	FILE *fp;
 	int nb;
@@ -93,8 +105,20 @@ int nbCharInFile(const char *fichier)
 	while((c=fgetc(fp)) != EOF)
 	{	
 		if(c=='\n')
-			nb++;			
+			nb++;		
 	}
+	fclose(fp);
+	return nb;
+}
+
+int nbCharInFile(const char *fichier)
+{
+	FILE *fp;
+	int nb;
+	char c;
+	fp = fopen(fichier, "r");
+	while((c=fgetc(fp)) != EOF)
+		nb++;		
 	fclose(fp);
 	return nb;
 }
