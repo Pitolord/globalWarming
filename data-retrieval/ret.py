@@ -1,12 +1,11 @@
-
+#les chemin complet sont requis pour utiliser cron
 filepath = 'places.txt'
-#print("Line {}: {}".format(cnt, line.strip()))
 import pyowm
 import time
 import datetime
 
 owm = pyowm.OWM('b7c635aa6d4f700b3ffd7a54f01b4958')  # You MUST provide a valid API key
-ofile = 'out/data-' + str(datetime.datetime.now())
+ofile = 'out/data-' + str(datetime.datetime.now()) + ".txt" 
 
 f = open(ofile,"w")
 
@@ -31,8 +30,7 @@ with open(filepath) as fp:
         f.write(o)
 
         city = fp.readline().rstrip()
-        time.sleep(10)
-    
+        time.sleep(1)
 f.close()
 
 
