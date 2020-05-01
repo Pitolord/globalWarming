@@ -45,13 +45,30 @@ setInterval(() => {
 }, 33.3);
 
 
-
+/*
 $('#form').submit(function () {
  afficher();
  return false;
 });
-
-//Afficher
+*/
+//,  , 
 function afficher(){
-  document.getElementById("pays").innerHTML = "Les pays où l'espece choisi peut vivre";
+	var locations = [];
+	locations.push({lat: 41.902782, lng: 12.496366});
+	locations.push({lat: 33.8933182, lng: 33.8933182});
+	locations.push({lat: 30.427755, lng: -9.598107});
+	locations.push({lat: 42.57, lng: -8.66556});
+	locations.push({lat: 43.3713493, lng: -8.3959999});
+	locations.push({lat: 40.4165001, lng: -3.7025599});
+	locations.push({lat: 48.8534088, lng: 2.3487999});
+	locations.push({lat: 44.836151, lng: -0.580816});
+
+	//var locations = [, ,  , ,
+	//];
+	var arrayLength = locations.length;
+	for (var i = 0; i < arrayLength; i++) 
+		var marker = new google.maps.Marker({ position: locations[i], map: map, title: 'Test'});
+	
+	
 }
+

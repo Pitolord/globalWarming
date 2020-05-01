@@ -8,10 +8,10 @@
     <title>Projet tut</title>
   </head>
   <body>
-    <div class="intro">
+  <!--  <div class="intro">
       <h1>Chaque année plusieurs espèces animales disparaissent</h1>
       <video src="Mon film.mp4"></video>
-    </div>
+  </div> -->
     <section class="section1">
       <h1>Protégeons les !</h1>
 
@@ -27,7 +27,7 @@
                   <option>Ours polaire</option>
                 </select>
 
-                <button type="submit" id="bu1" onclick="afficher()"> Confirmer </button>
+                <button type="button" id="bu1" onclick="afficher();"> Confirmer </button>
 
           </form>
       </div>
@@ -35,7 +35,7 @@
     </a>
 
           <a id="a2"> <h2 id="pays"></h2> 
-            <div class="Commande">
+            <div id="map" class="Commande">
 
             </div>
           </a>
@@ -63,8 +63,20 @@
       crossorigin="anonymous"
     ></script>
     <script src="app.js"></script>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 43.493891, lng: -1.544312},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-8LHQlkFxEzB0TeRgmjd3bPU3epvGx1c&callback=initMap"
+    async defer></script>
   </body>
 </html>
+
 
 
 

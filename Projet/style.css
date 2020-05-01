@@ -106,3 +106,7 @@ h2 {
     border-color: black;
     border-style: double;
 } 
+
+#map {
+ height: 96%;
+}
