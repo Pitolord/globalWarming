@@ -52,6 +52,7 @@ $('#form').submit(function () {
 });
 */
 //,  , 
+
 function afficher(){
 	var locations = [];
 	locations.push({lat: 41.902782, lng: 12.496366});
