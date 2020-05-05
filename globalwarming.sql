@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 05 mai 2020 à 15:55
+-- Généré le :  mar. 05 mai 2020 à 15:59
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -24763,6 +24763,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifiant` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
