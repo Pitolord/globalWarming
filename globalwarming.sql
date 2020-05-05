@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 29 avr. 2020 à 15:03
+-- Généré le :  mar. 05 mai 2020 à 15:40
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -25,6 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `animal`
+--
+
+DROP TABLE IF EXISTS `animal`;
+CREATE TABLE IF NOT EXISTS `animal` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `temp_min` float NOT NULL,
+  `temp_max` float NOT NULL,
+  `image` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `animal`
+--
+
+INSERT INTO `animal` (`id`, `name`, `temp_min`, `temp_max`, `image`) VALUES
+(1, 'Ours polaire', -60, 5, 'Ours.jpg'),
+(5, 'Phoque', -15, 5, 'Phoque.jpg'),
+(6, 'Esteban', 15, 28, ''),
+(7, 'Axek', 30, 60, 'Axek.jpg'),
+(8, 'Barnou', 5, 20, 'Barnou.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `data`
 --
 
@@ -41,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `data` (
   `sunrise_time` datetime NOT NULL,
   `sunset_time` datetime NOT NULL,
   `atmos_pressure` int(11) NOT NULL,
-  `weather` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `weather` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `last_update` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
