@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 05 mai 2020 à 15:40
+-- Généré le :  mar. 05 mai 2020 à 15:55
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -24751,6 +24751,20 @@ INSERT INTO `data` (`city`, `max_temp`, `min_temp`, `temp`, `ret_time`, `longitu
 ('Yamoussoukro', 27, 26.67, 26.83, '2020-04-23 00:03:38', -5.28, 6.82, 83, '2020-04-23 06:09:35', '2020-04-23 18:28:48', 1012, 'light rain', '2020-04-23 00:00:22'),
 ('Yaren', 28.45, 28.45, 28.45, '2020-04-23 00:03:39', 166.92, -0.55, 76, '2020-04-22 18:47:34', '2020-04-23 06:53:23', 1010, 'scattered clouds', '2020-04-23 00:00:11'),
 ('Yerevan', 12, 12, 12, '2020-04-23 00:03:40', 44.51, 40.18, 93, '2020-04-23 02:11:50', '2020-04-23 15:48:17', 1009, 'light intensity shower rain', '2020-04-23 00:00:01');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+DROP TABLE IF EXISTS `membres`;
+CREATE TABLE IF NOT EXISTS `membres` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifiant` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
