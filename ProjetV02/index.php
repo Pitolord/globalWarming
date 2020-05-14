@@ -2,7 +2,6 @@
 <?php
 
 session_start();
-echo 'Contenu de $_SESSION[\'login\'] : ' .$_SESSION['login'];
 ?>
 <html lang="fr">
   <head>
