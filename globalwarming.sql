@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 05 mai 2020 à 15:59
+-- Généré le :  jeu. 14 mai 2020 à 15:19
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -24764,8 +24764,19 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `identifiant` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `rôle` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`id`, `identifiant`, `password`, `email`, `rôle`) VALUES
+(1, 'Nicolas', 'Barnou', 'dddddd', 'admin'),
+(2, 'Axel', 'Axek', 'ddddddd', 'admin'),
+(3, 'Mouad', 'Boom', 'ddddd', 'admin'),
+(4, 'Esteban', 'Eclatax', 'dddddddddd', 'admin');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
