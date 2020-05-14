@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 14 mai 2020 à 15:19
+-- Généré le :  jeu. 14 mai 2020 à 16:39
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -24777,6 +24777,27 @@ INSERT INTO `membres` (`id`, `identifiant`, `password`, `email`, `rôle`) VALUES
 (2, 'Axel', 'Axek', 'ddddddd', 'admin'),
 (3, 'Mouad', 'Boom', 'ddddd', 'admin'),
 (4, 'Esteban', 'Eclatax', 'dddddddddd', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `role_keys`
+--
+
+DROP TABLE IF EXISTS `role_keys`;
+CREATE TABLE IF NOT EXISTS `role_keys` (
+  `rôle` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `role_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `role_keys`
+--
+
+INSERT INTO `role_keys` (`rôle`, `role_key`) VALUES
+('admin', '36d3ee5a'),
+('biologist', 'fd297722'),
+('ecologist', '0614c1b5');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
