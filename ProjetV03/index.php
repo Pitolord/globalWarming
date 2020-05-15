@@ -22,7 +22,7 @@ session_start();
       <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="MS.pdf">Méthodologie Scientifique</a></li>
-          <li><a href="">Global Warming</a></li>
+          <li><a href="projetIntegrateur.pdf">Global Warming</a></li>
 		  <?php 
 		  if (isset($_SESSION['login'])) {
 			echo '<li style="float:right"><a href="deconnexion.php">Déconnexion</a></li>';
