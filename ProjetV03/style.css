@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.intro {
+  height: 100vh;
+  
+}
+
+
+.intro video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: white;
+}
+
+
+section {
+  height: 100vh;
+  color: black;
+}
+
+section h1 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 90px;
+  background-image: repeating-linear-gradient(to left, violet, indigo, green, red, orange, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 800% 800%; 
+  animation: slide 25s linear infinite forwards; 
+}
+
+@keyframes slide {
+  0% {
+      background-position-x: 0%;
+  }
+  100% {
+      background-position-x: 800%;
+  }
+}
+
+
+#a1{
+    background-color: #bdc3c7;  
+    float:left;
+    margin-left:2%;
+    width:30%;
+    margin-top: 2%;
+    height: 300px;
+    border-width: 6px;
+    border-color: black;
+    border-style: double;
+} 
+
+h2 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#p1{
+  text-align: center;
+  padding-top: 50px;
+}
+
+#saisieMode{
+  width: 63%;
+  margin-left: 18%;
+  margin-top: 1%;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.section1 {
+  background-color: #000000 ;
+}
+
+#bu1 {
+  margin-top: 50px;
+  margin-left: 35%;
+  width: 25%;
+}
+
+#a2{
+    background-color: #bdc3c7;  
+    float:right;
+    margin-right:2%;
+    width:64%;
+    margin-top: 2%;
+    height: 300px;
+    border-width: 6px;
+    border-color: black;
+    border-style: double;
+} 
+
+#add {
+ margin-left: 10%;
+ margin-top: 30px;
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+}
+hr {
+  width: 615px;
+}
+
+#scroll {
+  display: block; 
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+
+
+.active {
+  background-color: #4CAF50;
+}
